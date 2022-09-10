@@ -10,4 +10,4 @@ Load
     Maximize Browser Window
 
 Verify Page Loaded
-    Wait Until Page Contains  Homes
+    Wait Until Page Contains  Home
