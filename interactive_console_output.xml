@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220909 07:38:45.919" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\estradar\.vscode\extensions\robocorp.robotframework-lsp-1.1.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="ShopPage.Add Single Product to Cart">
+<msg timestamp="20220909 07:38:46.733" level="FAIL">No keyword with name 'ShopPage.Add Single Product to Cart' found.</msg>
+<status status="FAIL" starttime="20220909 07:38:46.732" endtime="20220909 07:38:46.733"/>
+</kw>
+<kw name="ShopPage.Checkout Product">
+<status status="NOT RUN" starttime="20220909 07:38:46.735" endtime="20220909 07:38:46.735"/>
+</kw>
+<status status="PASS" starttime="20220909 07:38:45.951" endtime="20220909 07:38:49.895"/>
+</kw>
+<status status="PASS" starttime="20220909 07:38:45.951" endtime="20220909 07:38:49.897"/>
+</test>
+<status status="PASS" starttime="20220909 07:38:45.919" endtime="20220909 07:38:49.899"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
