@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220909 07:38:45.919" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220911 02:01:37.649" rpa="false" schemaversion="3">
 <suite id="s1" name="Robot Interactive Console" source="c:\Users\estradar\.vscode\extensions\robocorp.robotframework-lsp-1.1.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<kw name="ShopPage.Add Single Product to Cart">
-<msg timestamp="20220909 07:38:46.733" level="FAIL">No keyword with name 'ShopPage.Add Single Product to Cart' found.</msg>
-<status status="FAIL" starttime="20220909 07:38:46.732" endtime="20220909 07:38:46.733"/>
+<kw name="Navigation.Navigate to &quot;Home&quot; Page">
+<msg timestamp="20220911 02:01:39.683" level="FAIL">No keyword with name 'Navigation.Navigate to "Home" Page' found.</msg>
+<status status="FAIL" starttime="20220911 02:01:39.683" endtime="20220911 02:01:39.683"/>
 </kw>
-<kw name="ShopPage.Checkout Product">
-<status status="NOT RUN" starttime="20220909 07:38:46.735" endtime="20220909 07:38:46.735"/>
+<status status="PASS" starttime="20220911 02:01:37.759" endtime="20220911 02:01:40.821"/>
 </kw>
-<status status="PASS" starttime="20220909 07:38:45.951" endtime="20220909 07:38:49.895"/>
-</kw>
-<status status="PASS" starttime="20220909 07:38:45.951" endtime="20220909 07:38:49.897"/>
+<status status="PASS" starttime="20220911 02:01:37.759" endtime="20220911 02:01:40.822"/>
 </test>
-<status status="PASS" starttime="20220909 07:38:45.919" endtime="20220909 07:38:49.899"/>
+<status status="PASS" starttime="20220911 02:01:37.651" endtime="20220911 02:01:40.823"/>
 </suite>
 <statistics>
 <total>
