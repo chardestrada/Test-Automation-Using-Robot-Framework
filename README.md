@@ -1,13 +1,15 @@
-# Template: Basic Python only robot
+## Running Robot
+robot -d results -i currenttest -v BROWSER:chrome tests/pagenavigation.robot
 
-Get started with just Python.
+-i - include tag
+-d - result directory
+-v BROWSER:chrome - specicy browser
 
-This template robot:
-
-- Uses only Python.
-- Provides a simple template to start from (`task.py`).
-
-## Learning materials
-
-- [Python basics](https://robocorp.com/docs/languages-and-frameworks/python)
-- [Best practices in creating Python robots](https://robocorp.com/docs/development-guide/qa-and-best-practices/python-robots)
+## Installing Jenkins
+Install Java
+Install Git
+Download .war installer from http://jenkins.io
+Place it in C Program (86)
+Create environment variable JENKINS_HOME
+Run
+java -Dhudson.model.DirectoryBrowserSupport.CSP= -jar jenkins.war

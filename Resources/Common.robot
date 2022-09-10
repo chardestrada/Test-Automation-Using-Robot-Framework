@@ -1,14 +1,11 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource     ../Data/Config.robot
-
 
 *** Variables ***
 # Configuration
 ${ENVIRONMENT} =    dev
 ${BROWSER} =  chrome
 &{BASE_URL}    dev=http://localhost/r-shop/    qa=http://qa.losasast/r-shop/    stage=http://stage    prod=http://prod.localhost/r-shop/
-
 
 # Input Data
 &{UNREGISTERED_USER}  Email=someone@notregistered.com  Password=TestPassword!  ExpectedErrorMessage=You haven't signed up yet. Try a different email address or
