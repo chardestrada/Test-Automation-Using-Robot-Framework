@@ -1,86 +1,507 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20220911 01:03:36.319" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20220911 15:32:09.768" rpa="false" schemaversion="3">
 <suite id="s1" name="Pagenavigation" source="C:\Users\estradar\Desktop\Test Automation\development\r-shop-tests\tests\pagenavigation.robot">
 <test id="s1-t1" name="User should be able to navigate the &quot;Home&quot; page" line="11">
 <kw name="Begin Web Test" library="Common" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220911 01:03:36.540" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20220911 01:03:36.540" endtime="20220911 01:03:37.982"/>
+<msg timestamp="20220911 15:32:09.984" level="INFO">Opening browser 'chrome' to base url 'about:blank' through remote server at 'https://oauth-estradarichard1995-74e6a:94f3f937-e0c9-4b4a-82b6-bc4ae50187d9@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.</msg>
+<status status="PASS" starttime="20220911 15:32:09.984" endtime="20220911 15:32:16.332"/>
 </kw>
-<status status="PASS" starttime="20220911 01:03:36.536" endtime="20220911 01:03:37.982"/>
+<status status="PASS" starttime="20220911 15:32:09.983" endtime="20220911 15:32:16.332"/>
 </kw>
 <kw name="Navigate to &quot;Home&quot; Page" library="Navigation">
 <kw name="Load" library="LandingPage">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${BASE_URL.${ENVIRONMENT}}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220911 01:03:37.985" level="INFO">Opening url 'http://localhost/r-shop/'</msg>
-<status status="PASS" starttime="20220911 01:03:37.984" endtime="20220911 01:03:42.753"/>
+<msg timestamp="20220911 15:32:16.332" level="INFO">Opening url 'http://localhost/r-shop/'</msg>
+<status status="PASS" starttime="20220911 15:32:16.332" endtime="20220911 15:32:17.228"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220911 01:03:42.753" endtime="20220911 01:03:42.880"/>
+<status status="PASS" starttime="20220911 15:32:17.228" endtime="20220911 15:32:17.558"/>
 </kw>
-<status status="PASS" starttime="20220911 01:03:37.983" endtime="20220911 01:03:42.880"/>
+<status status="PASS" starttime="20220911 15:32:16.332" endtime="20220911 15:32:17.558"/>
 </kw>
 <kw name="Verify Page Loaded" library="LandingPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Home</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220911 01:03:42.880" endtime="20220911 01:03:42.936"/>
+<msg timestamp="20220911 15:32:23.887" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220911 15:32:23.887" level="FAIL">Text 'Home' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20220911 15:32:17.574" endtime="20220911 15:32:23.887"/>
 </kw>
-<status status="PASS" starttime="20220911 01:03:42.880" endtime="20220911 01:03:42.936"/>
+<status status="FAIL" starttime="20220911 15:32:17.574" endtime="20220911 15:32:23.887"/>
 </kw>
 <kw name="Navigate to &quot;Home&quot; Page" library="TopNav">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${HOME_NAV}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220911 01:03:42.938" endtime="20220911 01:03:43.028"/>
+<status status="NOT RUN" starttime="20220911 15:32:23.887" endtime="20220911 15:32:23.887"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${HOME_NAV}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220911 01:03:43.029" level="INFO">Clicking element 'xpath=//*[@id="menu-item-1147"]/a'.</msg>
-<status status="PASS" starttime="20220911 01:03:43.028" endtime="20220911 01:03:44.373"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Home</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220911 01:03:44.373" endtime="20220911 01:03:44.391"/>
-</kw>
-<status status="PASS" starttime="20220911 01:03:42.937" endtime="20220911 01:03:44.391"/>
-</kw>
-<status status="PASS" starttime="20220911 01:03:37.983" endtime="20220911 01:03:44.391"/>
+<status status="FAIL" starttime="20220911 15:32:16.332" endtime="20220911 15:32:23.887"/>
 </kw>
 <kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Update Saucelabs Test Result</arg>
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Update Saucelabs Test Result">
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<msg timestamp="20220911 15:32:23.887" level="FAIL">No keyword with name 'Update Saucelabs Test Result' found.</msg>
+<status status="FAIL" starttime="20220911 15:32:23.887" endtime="20220911 15:32:23.887"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:23.887" endtime="20220911 15:32:23.887"/>
+</kw>
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20220911 01:03:44.392" endtime="20220911 01:03:46.661"/>
+<status status="PASS" starttime="20220911 15:32:23.887" endtime="20220911 15:32:24.233"/>
 </kw>
-<status status="PASS" starttime="20220911 01:03:44.392" endtime="20220911 01:03:46.661"/>
+<status status="FAIL" starttime="20220911 15:32:23.887" endtime="20220911 15:32:24.233">No keyword with name 'Update Saucelabs Test Result' found.</status>
 </kw>
 <tag>currenttest</tag>
 <tag>Home</tag>
-<status status="PASS" starttime="20220911 01:03:36.536" endtime="20220911 01:03:46.661"/>
+<status status="FAIL" starttime="20220911 15:32:09.979" endtime="20220911 15:32:24.233">Text 'Home' did not appear in 5 seconds.
+
+Also teardown failed:
+No keyword with name 'Update Saucelabs Test Result' found.</status>
+</test>
+<test id="s1-t2" name="User should be able to navigate the &quot;Shop&quot; page" line="15">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220911 15:32:24.233" level="INFO">Opening browser 'chrome' to base url 'about:blank' through remote server at 'https://oauth-estradarichard1995-74e6a:94f3f937-e0c9-4b4a-82b6-bc4ae50187d9@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.</msg>
+<status status="PASS" starttime="20220911 15:32:24.233" endtime="20220911 15:32:31.116"/>
+</kw>
+<status status="PASS" starttime="20220911 15:32:24.233" endtime="20220911 15:32:31.116"/>
+</kw>
+<kw name="Navigate to &quot;Shop&quot; Page" library="Navigation">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL.${ENVIRONMENT}}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220911 15:32:31.131" level="INFO">Opening url 'http://localhost/r-shop/'</msg>
+<status status="PASS" starttime="20220911 15:32:31.116" endtime="20220911 15:32:31.898"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220911 15:32:31.898" endtime="20220911 15:32:32.166"/>
+</kw>
+<status status="PASS" starttime="20220911 15:32:31.116" endtime="20220911 15:32:32.166"/>
+</kw>
+<kw name="Navigate to &quot;Shop&quot; Page" library="TopNav">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SHOP_NAV}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20220911 15:32:38.806" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220911 15:32:38.806" level="FAIL">Element 'xpath=//*[@id="menu-item-1129"]/a' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20220911 15:32:32.166" endtime="20220911 15:32:38.806"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHOP_NAV}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220911 15:32:38.806" endtime="20220911 15:32:38.806"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Shop</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20220911 15:32:38.806" endtime="20220911 15:32:38.806"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:32.166" endtime="20220911 15:32:38.806"/>
+</kw>
+<kw name="Verify Page Loaded" library="Shop">
+<status status="NOT RUN" starttime="20220911 15:32:38.806" endtime="20220911 15:32:38.806"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:31.116" endtime="20220911 15:32:38.806"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Update Saucelabs Test Result</arg>
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Update Saucelabs Test Result">
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<msg timestamp="20220911 15:32:38.806" level="FAIL">No keyword with name 'Update Saucelabs Test Result' found.</msg>
+<status status="FAIL" starttime="20220911 15:32:38.806" endtime="20220911 15:32:38.806"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:38.806" endtime="20220911 15:32:38.806"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220911 15:32:38.806" endtime="20220911 15:32:39.152"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:38.806" endtime="20220911 15:32:39.152">No keyword with name 'Update Saucelabs Test Result' found.</status>
+</kw>
+<tag>current</tag>
+<tag>Shop</tag>
+<status status="FAIL" starttime="20220911 15:32:24.233" endtime="20220911 15:32:39.152">Element 'xpath=//*[@id="menu-item-1129"]/a' not visible after 5 seconds.
+
+Also teardown failed:
+No keyword with name 'Update Saucelabs Test Result' found.</status>
+</test>
+<test id="s1-t3" name="User should be able to navigate the &quot;Wishlist&quot; page" line="19">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220911 15:32:39.167" level="INFO">Opening browser 'chrome' to base url 'about:blank' through remote server at 'https://oauth-estradarichard1995-74e6a:94f3f937-e0c9-4b4a-82b6-bc4ae50187d9@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.</msg>
+<status status="PASS" starttime="20220911 15:32:39.166" endtime="20220911 15:32:45.022"/>
+</kw>
+<status status="PASS" starttime="20220911 15:32:39.166" endtime="20220911 15:32:45.022"/>
+</kw>
+<kw name="Navigate to &quot;Wishlist&quot; Page" library="Navigation">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL.${ENVIRONMENT}}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220911 15:32:45.022" level="INFO">Opening url 'http://localhost/r-shop/'</msg>
+<status status="PASS" starttime="20220911 15:32:45.022" endtime="20220911 15:32:45.793"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220911 15:32:45.793" endtime="20220911 15:32:46.067"/>
+</kw>
+<status status="PASS" starttime="20220911 15:32:45.022" endtime="20220911 15:32:46.067"/>
+</kw>
+<kw name="Navigate to &quot;Wishlist&quot; Page" library="TopNav">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${WISHLIST_NAV}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20220911 15:32:52.623" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220911 15:32:52.623" level="FAIL">Element 'xpath=//*[@id="menu-item-1130"]/a' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20220911 15:32:46.067" endtime="20220911 15:32:52.623"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WISHLIST_NAV}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220911 15:32:52.624" endtime="20220911 15:32:52.624"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Shop</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20220911 15:32:52.624" endtime="20220911 15:32:52.624"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:46.067" endtime="20220911 15:32:52.624"/>
+</kw>
+<kw name="Verify Page Loaded" library="Wishlist">
+<status status="NOT RUN" starttime="20220911 15:32:52.624" endtime="20220911 15:32:52.624"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:45.022" endtime="20220911 15:32:52.624"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Update Saucelabs Test Result</arg>
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Update Saucelabs Test Result">
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<msg timestamp="20220911 15:32:52.628" level="FAIL">No keyword with name 'Update Saucelabs Test Result' found.</msg>
+<status status="FAIL" starttime="20220911 15:32:52.628" endtime="20220911 15:32:52.628"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:52.625" endtime="20220911 15:32:52.628"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220911 15:32:52.628" endtime="20220911 15:32:53.102"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:52.625" endtime="20220911 15:32:53.102">No keyword with name 'Update Saucelabs Test Result' found.</status>
+</kw>
+<tag>Wishlist</tag>
+<status status="FAIL" starttime="20220911 15:32:39.166" endtime="20220911 15:32:53.103">Element 'xpath=//*[@id="menu-item-1130"]/a' not visible after 5 seconds.
+
+Also teardown failed:
+No keyword with name 'Update Saucelabs Test Result' found.</status>
+</test>
+<test id="s1-t4" name="User should be able to navigate the &quot;Collection&quot; page" line="23">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220911 15:32:53.106" level="INFO">Opening browser 'chrome' to base url 'about:blank' through remote server at 'https://oauth-estradarichard1995-74e6a:94f3f937-e0c9-4b4a-82b6-bc4ae50187d9@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.</msg>
+<status status="PASS" starttime="20220911 15:32:53.106" endtime="20220911 15:32:58.879"/>
+</kw>
+<status status="PASS" starttime="20220911 15:32:53.105" endtime="20220911 15:32:58.879"/>
+</kw>
+<kw name="Navigate to &quot;Collection&quot; Page" library="Navigation">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL.${ENVIRONMENT}}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220911 15:32:58.879" level="INFO">Opening url 'http://localhost/r-shop/'</msg>
+<status status="PASS" starttime="20220911 15:32:58.879" endtime="20220911 15:32:59.632"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220911 15:32:59.632" endtime="20220911 15:32:59.903"/>
+</kw>
+<status status="PASS" starttime="20220911 15:32:58.879" endtime="20220911 15:32:59.903"/>
+</kw>
+<kw name="Navigate to &quot;Collection&quot; Page" library="TopNav">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${COLLECTION_NAV}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20220911 15:33:07.386" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220911 15:33:07.386" level="FAIL">Element 'xpath=//*[@id="menu-item-1131"]/a' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20220911 15:32:59.904" endtime="20220911 15:33:07.386"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${COLLECTION_NAV}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220911 15:33:07.386" endtime="20220911 15:33:07.386"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Collection</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20220911 15:33:07.386" endtime="20220911 15:33:07.386"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:59.903" endtime="20220911 15:33:07.386"/>
+</kw>
+<kw name="Verify Page Loaded" library="Collection">
+<status status="NOT RUN" starttime="20220911 15:33:07.386" endtime="20220911 15:33:07.386"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:32:58.879" endtime="20220911 15:33:07.386"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Update Saucelabs Test Result</arg>
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Update Saucelabs Test Result">
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<msg timestamp="20220911 15:33:07.386" level="FAIL">No keyword with name 'Update Saucelabs Test Result' found.</msg>
+<status status="FAIL" starttime="20220911 15:33:07.386" endtime="20220911 15:33:07.386"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:33:07.386" endtime="20220911 15:33:07.386"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220911 15:33:07.386" endtime="20220911 15:33:07.727"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:33:07.386" endtime="20220911 15:33:07.727">No keyword with name 'Update Saucelabs Test Result' found.</status>
+</kw>
+<tag>Collection</tag>
+<status status="FAIL" starttime="20220911 15:32:53.105" endtime="20220911 15:33:07.727">Element 'xpath=//*[@id="menu-item-1131"]/a' not visible after 5 seconds.
+
+Also teardown failed:
+No keyword with name 'Update Saucelabs Test Result' found.</status>
+</test>
+<test id="s1-t5" name="Use should be able to navigate the &quot;Contact&quot; page" line="27">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220911 15:33:07.736" level="INFO">Opening browser 'chrome' to base url 'about:blank' through remote server at 'https://oauth-estradarichard1995-74e6a:94f3f937-e0c9-4b4a-82b6-bc4ae50187d9@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.</msg>
+<status status="PASS" starttime="20220911 15:33:07.736" endtime="20220911 15:33:13.343"/>
+</kw>
+<status status="PASS" starttime="20220911 15:33:07.736" endtime="20220911 15:33:13.343"/>
+</kw>
+<kw name="Navigate to &quot;Contact&quot; Page" library="Navigation">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL.${ENVIRONMENT}}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220911 15:33:13.343" level="INFO">Opening url 'http://localhost/r-shop/'</msg>
+<status status="PASS" starttime="20220911 15:33:13.343" endtime="20220911 15:33:14.119"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220911 15:33:14.119" endtime="20220911 15:33:14.384"/>
+</kw>
+<status status="PASS" starttime="20220911 15:33:13.343" endtime="20220911 15:33:14.384"/>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20220911 15:33:20.883" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-39.png"&gt;&lt;img src="selenium-screenshot-39.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220911 15:33:20.883" level="FAIL">Text 'Home' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20220911 15:33:14.384" endtime="20220911 15:33:20.884"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:33:14.384" endtime="20220911 15:33:20.884"/>
+</kw>
+<kw name="Navigate to &quot;Contact&quot; Page" library="TopNav">
+<status status="NOT RUN" starttime="20220911 15:33:20.884" endtime="20220911 15:33:20.884"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:33:13.343" endtime="20220911 15:33:20.885"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Update Saucelabs Test Result</arg>
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Update Saucelabs Test Result">
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<msg timestamp="20220911 15:33:20.888" level="FAIL">No keyword with name 'Update Saucelabs Test Result' found.</msg>
+<status status="FAIL" starttime="20220911 15:33:20.888" endtime="20220911 15:33:20.888"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:33:20.886" endtime="20220911 15:33:20.888"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220911 15:33:20.888" endtime="20220911 15:33:21.234"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:33:20.885" endtime="20220911 15:33:21.234">No keyword with name 'Update Saucelabs Test Result' found.</status>
+</kw>
+<tag>Contact</tag>
+<status status="FAIL" starttime="20220911 15:33:07.727" endtime="20220911 15:33:21.238">Text 'Home' did not appear in 5 seconds.
+
+Also teardown failed:
+No keyword with name 'Update Saucelabs Test Result' found.</status>
+</test>
+<test id="s1-t6" name="Use should be able to navigate the &quot;My Accounts&quot; page" line="31">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220911 15:33:21.240" level="INFO">Opening browser 'chrome' to base url 'about:blank' through remote server at 'https://oauth-estradarichard1995-74e6a:94f3f937-e0c9-4b4a-82b6-bc4ae50187d9@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.</msg>
+<status status="PASS" starttime="20220911 15:33:21.240" endtime="20220911 15:33:27.943"/>
+</kw>
+<status status="PASS" starttime="20220911 15:33:21.240" endtime="20220911 15:33:27.943"/>
+</kw>
+<kw name="Navigate to &quot;My Accounts&quot; Page" library="Navigation">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL.${ENVIRONMENT}}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220911 15:33:27.947" level="INFO">Opening url 'http://localhost/r-shop/'</msg>
+<status status="PASS" starttime="20220911 15:33:27.947" endtime="20220911 15:33:28.844"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220911 15:33:28.844" endtime="20220911 15:33:29.108"/>
+</kw>
+<status status="PASS" starttime="20220911 15:33:27.947" endtime="20220911 15:33:29.108"/>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20220911 15:33:35.033" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-40.png"&gt;&lt;img src="selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220911 15:33:35.033" level="FAIL">Text 'Home' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20220911 15:33:29.108" endtime="20220911 15:33:35.033"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:33:29.108" endtime="20220911 15:33:35.033"/>
+</kw>
+<kw name="Navigate to &quot;My Accounts&quot; Page" library="TopNav">
+<status status="NOT RUN" starttime="20220911 15:33:35.033" endtime="20220911 15:33:35.033"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:33:27.947" endtime="20220911 15:33:35.033"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Update Saucelabs Test Result</arg>
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Update Saucelabs Test Result">
+<arg>${SUITE_NAME} | ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+<msg timestamp="20220911 15:33:35.037" level="FAIL">No keyword with name 'Update Saucelabs Test Result' found.</msg>
+<status status="FAIL" starttime="20220911 15:33:35.037" endtime="20220911 15:33:35.037"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:33:35.037" endtime="20220911 15:33:35.037"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220911 15:33:35.037" endtime="20220911 15:33:35.388"/>
+</kw>
+<status status="FAIL" starttime="20220911 15:33:35.037" endtime="20220911 15:33:35.388">No keyword with name 'Update Saucelabs Test Result' found.</status>
+</kw>
+<tag>My Accounts</tag>
+<status status="FAIL" starttime="20220911 15:33:21.238" endtime="20220911 15:33:35.388">Text 'Home' did not appear in 5 seconds.
+
+Also teardown failed:
+No keyword with name 'Update Saucelabs Test Result' found.</status>
 </test>
 <doc>This Test Suite verifies if all pages are accessible by all users.</doc>
-<status status="PASS" starttime="20220911 01:03:36.319" endtime="20220911 01:03:46.661"/>
+<status status="FAIL" starttime="20220911 15:32:09.768" endtime="20220911 15:33:35.394"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="6" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">currenttest</stat>
-<stat pass="1" fail="0" skip="0">Home</stat>
+<stat pass="0" fail="1" skip="0">Collection</stat>
+<stat pass="0" fail="1" skip="0">Contact</stat>
+<stat pass="0" fail="1" skip="0">current</stat>
+<stat pass="0" fail="1" skip="0">currenttest</stat>
+<stat pass="0" fail="1" skip="0">Home</stat>
+<stat pass="0" fail="1" skip="0">My Accounts</stat>
+<stat pass="0" fail="1" skip="0">Shop</stat>
+<stat pass="0" fail="1" skip="0">Wishlist</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Pagenavigation">Pagenavigation</stat>
+<stat pass="0" fail="6" skip="0" id="s1" name="Pagenavigation">Pagenavigation</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220911 15:32:09.943" level="ERROR">Error in file 'C:\Users\estradar\Desktop\Test Automation\development\r-shop-tests\Resources\Common.robot' on line 3: Importing library 'Saucelabs' failed: ModuleNotFoundError: No module named 'Saucelabs'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\estradar\AppData\Local\Programs\Python\Python310\Scripts\robot.exe
+  C:\Users\estradar\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\estradar\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\estradar\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\estradar\AppData\Local\Programs\Python\Python310
+  C:\Users\estradar\AppData\Local\Programs\Python\Python310\lib\site-packages</msg>
 </errors>
 </robot>

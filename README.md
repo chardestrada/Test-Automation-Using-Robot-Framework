@@ -1,5 +1,5 @@
 ## Running Robot
-	robot -d results -i currenttest -v BROWSER:chrome tests/pagenavigation.robot
+	robot -d results/chrome -i currenttest -v BROWSER:chrome tests/pagenavigation.robot
 
 	-i - include tag
 	-d - result directory

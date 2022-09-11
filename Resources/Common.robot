@@ -1,11 +1,14 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library    SeleniumLibrary
+Library    Saucelabs
 
 *** Variables ***
 # Configuration
 ${ENVIRONMENT} =    dev
 ${BROWSER} =  chrome
 &{BASE_URL}    dev=http://localhost/r-shop/    qa=http://qa.losasast/r-shop/    stage=http://stage    prod=http://prod.localhost/r-shop/
+${REMOTE_URL} =  https://oauth-estradarichard1995-74e6a:94f3f937-e0c9-4b4a-82b6-bc4ae50187d9@ondemand.eu-central-1.saucelabs.com:443/wd/hub
+${DESIRED_CAPABILITIES} =  name:Windows 10 + Firefox latest,platform:Windows 10,browserName:Firefox,version:103
 
 # Input Data
 &{UNREGISTERED_USER}  Email=someone@notregistered.com  Password=TestPassword!  ExpectedErrorMessage=You haven't signed up yet. Try a different email address or
@@ -14,8 +17,11 @@ ${BROWSER} =  chrome
 
 *** Keywords ***
 Begin Web Test
-    Open Browser  about:blank  ${BROWSER}
-    # Maximize Browser Window
+    Open Browser  about:blank  ${BROWSER}    remote_url=${REMOTE_URL}    desired_capabilities=${DESIRED_CAPABILITIES} 
 
 End Web Test
-    Close All Browsers
+    Run keyword if  '${REMOTE_URL}' != ''
+    ...  Update Saucelabs Test Result
+    ...  ${SUITE_NAME} | ${TEST_NAME}
+    ...  ${TEST_STATUS}  ${TEST_TAGS}  ${REMOTE_URL}
+    Close all browsers
