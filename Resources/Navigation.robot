@@ -1,10 +1,10 @@
 *** Settings ***
-Resource  Rshop/Page Objects/TopNav.robot
-Resource  Rshop/Page Objects/LandingPage.robot
-Resource  Rshop/Page Objects/Shop.robot
-Resource  Rshop/Page Objects/Cart.robot
-Resource  Rshop/Page Objects/Wishlist.robot
-Resource  Rshop/Page Objects/Collection.robot
+Resource  Page Objects/TopNav.robot
+Resource  Page Objects/LandingPage.robot
+Resource  Page Objects/Shop.robot
+Resource  Page Objects/Cart.robot
+Resource  Page Objects/Wishlist.robot
+Resource  Page Objects/Collection.robot
 
 *** Keywords ***
 Navigate to "Home" Page
@@ -29,10 +29,8 @@ Navigate to "Collection" Page
     
 Navigate to "Contact" Page
     LandingPage.Load
-    LandingPage.Verify Page Loaded
     TopNav.Navigate to "Contact" Page
 
 Navigate to "My Accounts" Page
     LandingPage.Load
-    LandingPage.Verify Page Loaded
     TopNav.Navigate to "My Accounts" Page

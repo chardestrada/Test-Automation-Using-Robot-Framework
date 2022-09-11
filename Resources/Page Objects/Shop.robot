@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource  ../../Rshop/Page Objects/TopNav.robot
+Resource  ../Page Objects/TopNav.robot
 
 *** Variables ***
 ${SINGLE_PRODUCT_IMG} =  xpath=//*[@id="primary"]/ul/li[2]/figure/a[2]/img
@@ -9,7 +9,7 @@ ${PRODUCT_IMG_1} =  xpath=//*[@id="primary"]/ul/li[6]/figure/a[2]/img
 ${PRODUCT_IMG_2} =  xpath=//*[@id="primary"]/ul/li[7]/figure/a[2]/img
 ${PRODUCT_IMG_3} =  xpath=//*[@id="primary"]/ul/li[8]/figure/a[2]/img
 ${ADD_TO_CART_BUTTON} =  xpath=//*[@id="primary"]/ul/li[2]/figure/div/div/a[2]
-${VIEW_CART_BUTTON} =  xpath=//*[@id="woocommerce_widget_cart-1"]/div/p[2]/a[1]
+${SHOP_PAGE_VIEW_CART} =  xpath=//*[@id="woocommerce_widget_cart-2"]/div/p[2]/a[1]
 ${PRODUCT_QUANTITY} =  xpath=//*[@id="woocommerce_widget_cart-1"]/div/ul/li/span
 ${PRODUCT_SINGLE_PAGE_ADD_TO_CART_BUTTON} =   css=.single_add_to_cart_button
 ${SUCCESS_MESSAGE} =  has been added to your cart
@@ -24,8 +24,8 @@ Add Single Product to Cart
     Mouse Over  ${SINGLE_PRODUCT_IMG}
     Wait Until Element Is Visible    ${ADD_TO_CART_BUTTON}
     Click Link  ${ADD_TO_CART_BUTTON}
-    Wait Until Element Is Visible  ${VIEW_CART_BUTTON}
-    Click Link  ${VIEW_CART_BUTTON}
+    Wait Until Element Is Visible  ${SHOP_PAGE_VIEW_CART}
+    Click Link  ${SHOP_PAGE_VIEW_CART}
     Element Should Be Visible  ${SINGLE_PRODUCT_LINK}
 
 
@@ -42,7 +42,7 @@ Add Multiple Products to Cart
     Click Link  Add to cart
     Mouse Over  ${PRODUCT_IMG_3}
     Click Link  Add to cart
-    Click Link  ${VIEW_CART_BUTTON}
+    Click Link  ${SHOP_PAGE_VIEW_CART}
     Element Should Be Visible  ${SINGLE_PRODUCT_LINK}
 
 

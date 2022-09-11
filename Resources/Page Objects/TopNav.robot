@@ -3,11 +3,12 @@ Documentation  Rshop Top Navigation
 Library  SeleniumLibrary
 
 *** Variables ***
-${HOME_NAV} =  xpath=//*[@id="menu-item-1147"]/a
-${SHOP_NAV} =  xpath=//*[@id="menu-item-1129"]/a
-${WISHLIST_NAV} =  xpath=//*[@id="menu-item-1130"]/a
-${COLLECTION_NAV} =  xpath=//*[@id="menu-item-1131"]/a
-${CONTACT_NAV} =   xpath=//*[@id="menu-item-1132"]/a
+${HOME_NAV} =        xpath=//*[@id="menu-item-1151"]/a
+${SHOP_NAV} =        xpath=//*[@id="menu-item-1161"]/a
+${WISHLIST_NAV} =    xpath=//*[@id="menu-item-1162"]/a
+${COLLECTION_NAV} =  xpath=//*[@id="menu-item-1162"]/a
+${CONTACT_NAV} =     xpath=//*[@id="menu-item-1164"]/a
+${MY_ACCOUNT_NAV} =  xpath=//*[@id="masthead"]/div[3]/div/div[2]/div[2]/a
 
 *** Keywords ***
 Navigate to "Home" Page
@@ -39,6 +40,8 @@ Navigate to "Cart" Page
     Wait Until Page Contains  Cart
 
 Navigate to "My Accounts" Page
+    Wait Until Element Is Visible    ${MY_ACCOUNT_NAV}
+    Click Element    ${MY_ACCOUNT_NAV}
     Wait Until Page Contains  My Account
 
 # Enter Search Term

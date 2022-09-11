@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    Saucelabs
+# for saucelabs configuration 
+#Library    Saucelabs
 
 *** Variables ***
 # Configuration
@@ -17,11 +18,14 @@ ${DESIRED_CAPABILITIES} =  name:Windows 10 + Firefox latest,platform:Windows 8.1
 
 *** Keywords ***
 Begin Web Test
-    Open Browser  about:blank  ${BROWSER}    remote_url=${REMOTE_URL}    desired_capabilities=${DESIRED_CAPABILITIES} 
+    # for saucelabs configuration
+    #Open Browser  about:blank  ${BROWSER}    remote_url=${REMOTE_URL}    desired_capabilities=${DESIRED_CAPABILITIES} 
+    Open Browser  about:blank  ${BROWSER}
 
 End Web Test
-    Run keyword if  '${REMOTE_URL}' != ''
-    ...  Update Saucelabs Test Result
-    ...  ${SUITE_NAME} | ${TEST_NAME}
-    ...  ${TEST_STATUS}  ${TEST_TAGS}  ${REMOTE_URL}
+    # for saucelabs configuration
+    # Run keyword if  '${REMOTE_URL}' != ''
+    # ...  Update Saucelabs Test Result
+    # ...  ${SUITE_NAME} | ${TEST_NAME}
+    # ...  ${TEST_STATUS}  ${TEST_TAGS}  ${REMOTE_URL}
     Close all browsers

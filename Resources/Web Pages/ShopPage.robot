@@ -1,9 +1,9 @@
 *** Settings ***
-Resource  Rshop/Page Objects/TopNav.robot
-Resource  Rshop/Page Objects/LandingPage.robot
-Resource  Rshop/Page Objects/Shop.robot
-Resource  Rshop/Page Objects/Cart.robot
-Resource  Navigation.robot
+Resource  ../Page Objects/TopNav.robot
+Resource  ../Page Objects/LandingPage.robot
+Resource  ../Page Objects/Shop.robot
+Resource  ../Page Objects/Cart.robot
+Resource  ../Navigation.robot
 
 *** Keywords ***
 Add Single Product to Cart

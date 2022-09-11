@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation  This Test Suite includes all available functionalities in the Shop page
 Resource  ../Resources/Common.robot  # for Setup & Teardown
-Resource  ../Resources/ShopPage.robot  # for lower level keywords in test cases
+Resource  ../Resources/Web Pages/ShopPage.robot  # for lower level keywords in test cases
 Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
 
@@ -9,19 +9,19 @@ Test Teardown  Common.End Web Test
 
 *** Test Cases ***
 User should be able to add single product to Cart
-    [Tags]  Add Single Product
+    [Tags]  Add Product
     ShopPage.Add Single Product to Cart
 
 User should be able to Checkout single product
-    [Tags]  Checkout Single Product 
+    [Tags]  Checkout Product 
     ShopPage.Add Single Product to Cart
     ShopPage.Checkout Product
     
 User should be able to add multiple products to Cart
-    [Tags]  Add Multiple Products    currenttest
+    [Tags]  Add Product  
     ShopPage.Add Multiple Products to Cart
 
 User should be able to Checkout multiple products
-    [Tags]  Checkout Multiple Products   
+    [Tags]  Checkout Product  
     ShopPage.Add Multiple Products to Cart
     ShopPage.Checkout Product

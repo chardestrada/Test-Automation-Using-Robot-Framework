@@ -1,8 +1,8 @@
 *** Settings ***
-Resource  Rshop/Page Objects/TopNav.robot
-Resource  Rshop/Page Objects/LandingPage.robot
-Resource  Rshop/Page Objects/Checkout.robot
-Resource  Navigation.robot
+Resource  ../Page Objects/TopNav.robot
+Resource  ../Page Objects/LandingPage.robot
+Resource  ../Page Objects/Checkout.robot
+Resource  ../Navigation.robot
 Resource  ShopPage.robot
 
 *** Keywords ***
