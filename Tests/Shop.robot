@@ -13,7 +13,7 @@ User should be able to add single product to Cart
     ShopPage.Add Single Product to Cart
 
 User should be able to Checkout single product
-    [Tags]  Checkout Product 
+    [Tags]  Checkout 
     ShopPage.Add Single Product to Cart
     ShopPage.Checkout Product
     
@@ -22,6 +22,6 @@ User should be able to add multiple products to Cart
     ShopPage.Add Multiple Products to Cart
 
 User should be able to Checkout multiple products
-    [Tags]  Checkout Product  
+    [Tags]  Checkout  
     ShopPage.Add Multiple Products to Cart
     ShopPage.Checkout Product
