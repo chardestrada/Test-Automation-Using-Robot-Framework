@@ -1,9 +1,17 @@
-## Running Robot
+## Running Single Test Case Robot
 	robot -d results/chrome -i currenttest -v BROWSER:chrome tests/pagenavigation.robot
 
 	-i - include tag
 	-d - result directory
-	-v BROWSER:chrome - specicy browser
+	-v BROWSER:chrome - for firefox use ff or firefox
+
+### Running All Test Suites
+	Running in Chrome
+	robot -d Results\Chrome -i currenttest -v BROWSER:chrome tests.robot
+
+	Running in Firefox
+	robot -d Results\Firefox -i currenttest -v BROWSER:ff tests.robot
+
 
 ## Installing Jenkins
 	Install Java
