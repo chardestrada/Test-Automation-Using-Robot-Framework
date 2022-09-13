@@ -1,7 +1,9 @@
 *** Settings ***
-Documentation  This Test Suite verifies if all pages are accessible by all users.
-Resource  ../Resources/Common.robot  # for Setup & Teardown
-Resource  ../Resources/Navigation.robot  # for lower level keywords in test cases
+Documentation  This Test Suite includes all test cases for Page Navigation.
+Resource  ../Resources/Common.robot 
+Resource  ../Resources/Navigation.robot  
+
+# Test Setup and Teardown
 Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
 

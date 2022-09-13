@@ -6,6 +6,7 @@ Library  SeleniumLibrary
 
 *** Keywords ***
 Load
+    ${url} =    Catenate    SEPARATOR=/     ${BASE_URL.${ENVIRONMENT}} 
     Go To  ${BASE_URL.${ENVIRONMENT}}
     Maximize Browser Window
 

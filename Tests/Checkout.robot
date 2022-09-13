@@ -1,7 +1,9 @@
 *** Settings ***
-Documentation  This Test Suite includes all available functionalities in the Checkout page
-Resource  ../Resources/Common.robot  # for Setup & Teardown
-Resource  ../Resources/Web Pages/CheckoutPage.robot  # for lower level keywords in test cases
+Documentation  This Test Suite includes all test cases for Checkout functionality.
+Resource  ../Resources/Common.robot 
+Resource  ../Resources/Web Pages/CheckoutPage.robot  
+
+# Test Setup and Teardown
 Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
 

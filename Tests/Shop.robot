@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation  This Test Suite includes all available functionalities in the Shop page
-Resource  ../Resources/Common.robot  # for Setup & Teardown
-Resource  ../Resources/Web Pages/ShopPage.robot  # for lower level keywords in test cases
+Documentation  This Test Suite includes all test cases for Shop functionality.
+Resource  ../Resources/Common.robot  
+Resource  ../Resources/Web Pages/ShopPage.robot 
 Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
 
