@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220913 19:57:37.048" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220914 21:36:34.543" rpa="false" schemaversion="3">
 <suite id="s1" name="Robot Interactive Console" source="c:\Users\estradar\.vscode\extensions\robocorp.robotframework-lsp-1.1.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<status status="PASS" starttime="20220913 19:57:37.109" endtime="20220913 19:57:39.446"/>
+<kw name="Login.Successful Login">
+<arg>${REGISTERED_USER}</arg>
+<msg timestamp="20220914 21:36:35.520" level="FAIL">No keyword with name 'Login.Successful Login' found.</msg>
+<status status="FAIL" starttime="20220914 21:36:35.520" endtime="20220914 21:36:35.520"/>
 </kw>
-<status status="PASS" starttime="20220913 19:57:37.109" endtime="20220913 19:57:39.446"/>
+<status status="PASS" starttime="20220914 21:36:34.624" endtime="20220914 21:36:36.808"/>
+</kw>
+<status status="PASS" starttime="20220914 21:36:34.624" endtime="20220914 21:36:36.808"/>
 </test>
-<status status="PASS" starttime="20220913 19:57:37.048" endtime="20220913 19:57:39.447"/>
+<status status="PASS" starttime="20220914 21:36:34.546" endtime="20220914 21:36:36.809"/>
 </suite>
 <statistics>
 <total>

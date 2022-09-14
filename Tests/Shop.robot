@@ -9,19 +9,23 @@ Test Teardown  Common.End Web Test
 
 *** Test Cases ***
 User should be able to add single product to Cart
+    [Documentation]   This test case ensures ensures that user will be able to add single product to Cart.
     [Tags]  Add Product
     ShopPage.Add Single Product to Cart
 
-User should be able to Checkout single product
+User should be able to checkout single product
+    [Documentation]   This test case ensures ensures that user will be able to checkout single product.
     [Tags]  Checkout 
     ShopPage.Add Single Product to Cart
     ShopPage.Checkout Product
     
 User should be able to add multiple products to Cart
+    [Documentation]   This test case ensures ensures that user will be able to add multiple products to Cart.
     [Tags]  Add Product  
     ShopPage.Add Multiple Products to Cart
 
-User should be able to Checkout multiple products
+User should be able to checkout multiple products
+    [Documentation]   This test case ensures ensures that user will be able to checkout multiple products.
     [Tags]  Checkout  
     ShopPage.Add Multiple Products to Cart
     ShopPage.Checkout Product

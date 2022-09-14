@@ -1,10 +1,13 @@
 *** Settings ***
-Resource    ../Page Objects/SignIn.robot
+Resource    ../Page Objects/Register.robot
 Resource    ../../Resources/Navigation.robot
 
 *** Keywords ***
 Create New Account
     [Arguments]  ${UserData}
     Navigation.Navigate to "My Accounts" Page
-    SignIn.Fill Page and Submit  ${UserData}
+    Register.Fill Page and Submit  ${UserData}
 
+
+Test Multiple Invalid Registration Scenarios
+    

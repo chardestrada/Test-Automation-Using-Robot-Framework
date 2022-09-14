@@ -9,18 +9,24 @@ ${LOGIN_BUTTON} =  xpath=//*[@id="customer_login"]/div[1]/form/p[3]/button
 *** Keywords ***
 Enter Credentials
     [Arguments]  ${Credentials}
-    # Run Keyword Unless   '${Credentials.Email}' == '#BLANK'  Input Text  ${LOGIN_EMAIL_INPUT}  ${Credentials.Email}
-    # Run Keyword Unless   '${Credentials.Password}' == '#BLANK'  Input Text  ${LOGIN_PASSWORD_INPUT}  ${Credentials.Password}
+    # Run Keyword Unless   '${Credentials[0]}' == '#BLANK'  Input Text  ${LOGIN_EMAIL_INPUT}  ${Credentials[0]}
+    # Run Keyword Unless   '${Credentials[1]}' == '#BLANK'  Input Text  ${LOGIN_PASSWORD_INPUT}  ${Credentials[1]}
 
-    Run Keyword Unless   ${Credentials[0]} == "#BLANK"  Input Text  ${LOGIN_EMAIL_INPUT}  ${Credentials[0]}
-    Run Keyword Unless   ${Credentials[1]} == "#BLANK"  Input Text  ${LOGIN_PASSWORD_INPUT}  ${Credentials[1]}
+    Run Keyword Unless   '${Credentials.Email}' == '#BLANK'  Input Text  ${LOGIN_EMAIL_INPUT}  ${Credentials.Email}
+    Run Keyword Unless   '${Credentials.Password}' == '#BLANK'  Input Text  ${LOGIN_PASSWORD_INPUT}  ${Credentials.Password}
+
+    # Run Keyword If  '${Credentials.Email}' == '#BLANK'
+    # ...    Input Text  ${LOGIN_EMAIL_INPUT}  ${Credentials.Email}
+    # ...  ELSE   '${Credentials.Password}' == '#BLANK'
+    # ...    Input Text  ${LOGIN_PASSWORD_INPUT}  ${Credentials.Password}
 
 Click Submit
     Click Button  ${LOGIN_BUTTON}
 
 Verify Error Message
     [Arguments]  ${ExpectedErrorMessage}
-    Page Should Contain  ${ExpectedErrorMessage[2]}
+    # Page Should Contain  ${ExpectedErrorMessage[2]}
+    Page Should Contain  ${ExpectedErrorMessage}
 
 Clear Input Fields
     Clear Element Text  ${LOGIN_EMAIL_INPUT}

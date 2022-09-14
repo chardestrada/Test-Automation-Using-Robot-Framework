@@ -28,9 +28,6 @@ Test Multiple Login Scenarios
     Attempt Login  ${Credentials}
     Verify Login Page Error Message  ${Credentials.ExpectedErrorMessage}
 
-
-    
-    
 Attempt Login
     [Arguments]  ${Credentials}
     Login.Enter Credentials  ${Credentials}
