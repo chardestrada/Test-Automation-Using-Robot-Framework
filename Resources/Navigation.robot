@@ -5,6 +5,7 @@ Resource  Page Objects/Shop.robot
 Resource  Page Objects/Cart.robot
 Resource  Page Objects/Wishlist.robot
 Resource  Page Objects/Collection.robot
+Resource  Page Objects/Contact.robot
 
 *** Keywords ***
 Navigate to "Home" Page
@@ -30,6 +31,7 @@ Navigate to "Collection" Page
 Navigate to "Contact" Page
     LandingPage.Load
     TopNav.Navigate to "Contact" Page
+    Contact.Verify Page Loaded
 
 Navigate to "My Accounts" Page
     LandingPage.Load
