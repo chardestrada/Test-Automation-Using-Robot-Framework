@@ -15,11 +15,6 @@ Enter Credentials
     Run Keyword Unless   '${Credentials.Email}' == '#BLANK'  Input Text  ${LOGIN_EMAIL_INPUT}  ${Credentials.Email}
     Run Keyword Unless   '${Credentials.Password}' == '#BLANK'  Input Text  ${LOGIN_PASSWORD_INPUT}  ${Credentials.Password}
 
-    # Run Keyword If  '${Credentials.Email}' == '#BLANK'
-    # ...    Input Text  ${LOGIN_EMAIL_INPUT}  ${Credentials.Email}
-    # ...  ELSE   '${Credentials.Password}' == '#BLANK'
-    # ...    Input Text  ${LOGIN_PASSWORD_INPUT}  ${Credentials.Password}
-
 Click Submit
     Click Button  ${LOGIN_BUTTON}
 

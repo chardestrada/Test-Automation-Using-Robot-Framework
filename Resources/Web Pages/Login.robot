@@ -5,22 +5,11 @@ Resource    ../../Resources/Navigation.robot
 *** Keywords ***
 Login with Many Invalid Credentials
     [Arguments]  ${InvalidLoginScenarios}
-    # FOR    ${LoginScenario}     IN    ${InvalidLoginScenarios}
-    #     Navigation.Navigate to "My Accounts" Page
-    #     Attempt Login  ${LoginScenario}
-    #     Verify Login Page Error Message  ${LoginScenario}
-    # END
-    
     FOR  ${LoginScenario}  IN  ${InvalidLoginScenarios}
         Navigation.Navigate to "My Accounts" Page
         Attempt Login  ${LoginScenario}
         Verify Login Page Error Message  ${LoginScenario}
     END
-
-    # :FOR  ${LoginScenario}  IN ${InvalidLoginScenarios}
-    # \  Navigation.Navigate to "My Accounts" Page
-    # \  Attempt Login  ${LoginScenario}
-    # \  Verify Login Page Error Message  ${LoginScenario}
 
 Test Multiple Login Scenarios
     [Arguments]  ${Credentials}

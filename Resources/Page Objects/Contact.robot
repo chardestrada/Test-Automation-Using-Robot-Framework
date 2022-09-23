@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource  ThankYou.robot
 
 *** Variables ***
 ${NAME_INPUT} =  xpath=//input[@id="evf-686-field_name"]
@@ -14,11 +15,22 @@ ${DROP_DOWN_VALUE} =  Option 2
 ${NUMBER_LOCATOR} =  xpath=//*[@id="evf-686-field_av6rTIdB3v-5"]    
 ${URL_LOCATOR} =  xpath=//*[@id="evf-686-field_lAvWUeJf0A-8"]
 ${MESSAGE_LOCATOR} =  xpath=//*[@id="evf-686-field_message"]
+${SUBMIT_BUTTON} =  xpath=//button[@id="evf-submit-686"]
+
+${NAMEERROR_LOCATOR} =  xpath=//*[@id="evf-686-field_name-error"]
+${EMAILERROR_LOCATOR} =  xpath=//*[@id="evf-686-field_email-error"]
+${SUBJECTERROR_LOCATOR} =  xpath=//*[@id="evf-686-field_subject-error"]
 
 *** Keywords ***
 Verify Page Loaded
     Wait Until Page Contains  Contact
     Sleep    3s
+
+Fill-out Fields
+    [Arguments]  ${UserData}
+    Run Keyword Unless   '${UserData.Name}' == '#BLANK'  Input Text  ${NAME_INPUT}  ${UserData.Name}
+    Run Keyword Unless   '${UserData.Email}' == '#BLANK'  Input Text  ${EMAIL_INPUT}  ${UserData.Email}
+    Run Keyword Unless   '${UserData.Subject}' == '#BLANK'  Input Text  ${SUBJECT_INPUT}  ${UserData.Subject} 
 
 Fill-out Form then Submit
     [Arguments]  ${UserData}
@@ -32,7 +44,9 @@ Fill-out Form then Submit
     Fill Number  ${UserData.number}
     Fill URL  ${UserData.url}
     Fill Message  ${UserData.message}
+    Click Submit Button
     Sleep    5s
+    Verify Form Successful Submission
 
 Fill Name
     [Arguments]  ${Name}
@@ -51,16 +65,8 @@ Multiple Choice
     Select Radio Button    ${RadioGroup}    ${RadioValue} 
 
 Select Checkbox Options
-    # Scroll Element Into View    ${CHECKBOX_1}
-   
-    Select Checkbox    xpath=//*[@id="evf-686-field_8HDDaXUCAj-2_1"]
-    # Scroll Element Into View   ${CHECKBOX_1} 
-    # Select Checkbox  ${CHECKBOX_1}
-    
-
-    # Select Checkbox  ${CHECKBOX_2}
-    #Select Checkbox    xpath=//input[@id="evf-686-field_8HDDaXUCAj-2_2"]    
-
+    Select Checkbox  //*[@id="evf-686-field_8HDDaXUCAj-2_1"]
+    # Checkbox Should Be Selected    ${CHECKBOX_1}
 
 Select Date
     Click Element    ${SELECT_DATE_1}
@@ -80,3 +86,25 @@ Fill URL
 Fill Message
     [Arguments]  ${message}
     Input Text  ${MESSAGE_LOCATOR}  ${message}        
+
+Click Submit Button
+    Click Button    ${SUBMIT_BUTTON}
+
+Verify Form Successful Submission
+    ThankYou.Verify Page Loaded
+    
+Verify Correct Required Fields Error Message
+    Wait Until Page Contains    ${REQUIRED_FIELDS.Name}
+    Page Should Contain    ${REQUIRED_FIELDS.Name}
+    Page Should Contain    ${REQUIRED_FIELDS.Email}
+    Page Should Contain    ${REQUIRED_FIELDS.Subject}
+
+Verify Error Message
+    [Arguments]  ${ExpectedErrorMessage}
+    Page Should Contain  ${ExpectedErrorMessage.NameError}
+    Element Should Contain  ${NAMEERROR_LOCATOR}      ${ExpectedErrorMessage.NameError}
+    Page Should Contain  ${ExpectedErrorMessage.EmailError}
+    Element Should Contain   ${EMAILERROR_LOCATOR}   ${ExpectedErrorMessage.EmailError}
+    Page Should Contain  ${ExpectedErrorMessage.SubjectError}
+    Element Should Contain    ${SUBJECTERROR_LOCATOR}    ${ExpectedErrorMessage.SubjectError}
+   
