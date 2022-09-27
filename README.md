@@ -8,6 +8,13 @@
 	Install simplejson - pip install simplejson
 	Install	requests - pip install request
 
+<!-- ## Running Test Case in Saucelabs
+robot -d results -v DESIRED_CAPABILITIES:"name:Win 11 + Chrome latest,platform:Windows 11,browserName:chrome,version:latest" tests/pagenavigation.robot
+
+sc -u oauth-estradarichard1995-74e6a -k 94f3f937-e0c9-4b4a-82b6-bc4ae50187d9 --region eu-central --tunnel-name oauth-estradarichard1995-74e6a_tunnel_name
+
+C:\saucelabs\sc-4.8.1-win32\bin>sc -u oauth-estradarichard1995-74e6a -k 94f3f937-e0c9-4b4a-82b6-bc4ae50187d9 --region eu-central --tunnel-name oauth-estradarichard1995-74e6a_tunnel_name -->
+
 ## Running Single Test Case 
 	Running in Chrome
 	robot -d results/chrome -i currenttest -v BROWSER:chrome tests/pagenavigation.robot
@@ -33,4 +40,5 @@
 	Download .war installer from http://jenkins.io
 	Place it in C Drive
 	Create environment variable JENKINS_HOME
-	Run java -Dhudson.model.DirectoryBrowserSupport.CSP= -jar jenkins.war
+	cd C:\Program Files (x86)\Jenkins
+	java -Dhudson.model.DirectoryBrowserSupport.CSP= -jar jenkins.war
